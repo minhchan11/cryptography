@@ -16,7 +16,7 @@ function convert () {
    console.log(row);
    for (j=0; j <= col ; j++ ) {
    for (var i = j; i < row - 2 ; i+=col) {
-    i = i + (col*i)
+    i = (i + col)j
     console.log(array[i]);
     Output.push(array[i]);
     console.log(Output);
