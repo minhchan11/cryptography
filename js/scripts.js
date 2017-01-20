@@ -3,6 +3,7 @@ var row = 0;
 var col = 0;
 var fake = 0;
 var array = [];
+var Output = [];
 
 function convert () {
   fake = Math.sqrt(Input.length);
@@ -12,8 +13,16 @@ function convert () {
  if ( fake === parseInt(fake,10) ) {
    row = fake;
    col = fake;
-  for (var i = 0; i < m ; i+=col) {
-     console.log(array[i]);
+   console.log(row);
+   for (j=0; j <= 4 ; j++) {
+   for (var i = j; i < m ; i+=col) {
+    console.log(array[i]);
+    Output.push(array[i]);
+    console.log(Output);
+    Output = Output.slice(0,m);
+    console.log(Output);
+    Output = Output.join();
+    console.log(Output);}
    }
 
 
@@ -22,10 +31,17 @@ function convert () {
    col = Math.round(fake);
    console.log(row);
    console.log(col);
-   for (var i = 0; i < m ; i+=col) {
+   for (j=0; j <= row; j++) {
+   for (var i = j; i < m ; i+=col) {
      console.log(array[i]);
+     Output.push(array[i]);
+     console.log(Output);}
+     Output = Output.slice(0,m);
+     console.log(Output);
+     Output = Output.join();
+     console.log(Output);
    }
-}
+ }
 };
 
 //User Interface
@@ -34,7 +50,6 @@ $("document").ready(function() {
     event.preventDefault();
     Input = $("#userInput").val();
     array = Input.split("");
-    console.log(array);
     $(".result").show();
     convert();
     $("#crypt").text(array);
