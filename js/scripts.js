@@ -14,16 +14,18 @@ function convert () {
    row = fake;
    col = fake;
    console.log(row);
-   for (j=0; j <= 4 ; j++) {
-   for (var i = j; i < m ; i+=col) {
+   for (j=0; j <= col ; j++ ) {
+   for (var i = j; i < row - 2 ; i+=col) {
+    i = i + (col*i)
     console.log(array[i]);
     Output.push(array[i]);
     console.log(Output);
-    Output = Output.slice(0,m);
-    console.log(Output);
-    Output = Output.join();
-    console.log(Output);}
+    // Output = Output.slice(0,m);
+    // console.log(Output);
+    // Output = Output.join();
+    // console.log(Output);}
    }
+ }
 
 
  } else {
@@ -31,16 +33,18 @@ function convert () {
    col = Math.round(fake);
    console.log(row);
    console.log(col);
-   for (j=0; j <= row; j++) {
-   for (var i = j; i < m ; i+=col) {
+   for (j=0; j <= col; j++ ) {
+   for (var i = j; i < row - 2 ; i+=col) {
+     i = i + (col*i)
      console.log(array[i]);
      Output.push(array[i]);
-     console.log(Output);}
-     Output = Output.slice(0,m);
      console.log(Output);
-     Output = Output.join();
-     console.log(Output);
+    //  Output = Output.slice(0,m);
+    //  console.log(Output);
+    //  Output = Output.join();
+    //  console.log(Output);
    }
+ }
  }
 };
 
