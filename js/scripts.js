@@ -1,58 +1,47 @@
 //Business Logic
 var row = 0;
 var col = 0;
-var fake = 0;
+var square = 0;
 var array = [];
 var Output = [];
+var chunk = [];
 
 function convert () {
-  fake = Math.sqrt(Input.length);
+
+  square = Math.sqrt(Input.length);
   var m = Input.length;
-  console.log(fake);
-  console.log(m);
- if ( fake === parseInt(fake,10) ) {
-   row = fake;
+  //for perfect square
+ if ( square === parseInt(square,10) ) {
    col = Math.sqrt(Input.length)
    for (j=0; j < col ; j++ ) {
    for (var index = j; index < m ; index+=col) {
     Output.push(array[index]);
-    console.log(Output);
   ;} }
-    // Output = Output.slice(0,m);
-    // console.log(Output);
-    // Output = Output.join();
-    // console.log(Output);}
-
-
+ // for not perfect square
  } else {
-   row = Math.round(fake) + 1;
-   col = Math.round(fake);
-   console.log(row);
-   console.log(col);
+   col = Math.round(square);
    for (j=0; j < col; j++ ) {
    for (var index = j; index < m; index+=col)
-    { console.log(array[index]);
-     Output.push(array[index]);
-
-     console.log(Output);
-
-    //  Output = Output.slice(0,m);
-    //  console.log(Output);
-    //  Output = Output.join();
-    //  console.log(Output);
+    { Output.push(array[index]);
    }
  }
+ };
+//Create 2 new arrays: one for the rearranged strings and another to make group of 5
+ Output=Output.join("");
+ for (var k = 0; k < Output.length; k+=5) {
+   chunk.push(Output.substring(k,k+5));
  }
+ chunk = chunk.join("  ")
 };
 
 //User Interface
 $("document").ready(function() {
-  $(".form-group").submit(function(event) {
+  $("form").submit(function(event) {
     event.preventDefault();
-    Input = $("#userInput").val();
+    Input = $("#userInput").val().replace(/[\. ,:-]+/g, ""); //regEx replace special characters with blank//
     array = Input.split("");
     $(".result").show();
     convert();
-    $("#crypt").text(array);
+    $("#crypt").text(chunk);
   });
 });
