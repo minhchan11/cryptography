@@ -12,20 +12,16 @@ function convert () {
   console.log(m);
  if ( fake === parseInt(fake,10) ) {
    row = fake;
-   col = fake;
-   console.log(row);
-   for (j=0; j <= col ; j++ ) {
-   for (var i = j; i < row - 2 ; i+=col) {
-    i = (i + col)j
-    console.log(array[i]);
-    Output.push(array[i]);
+   col = Math.sqrt(Input.length)
+   for (j=0; j < col ; j++ ) {
+   for (var index = j; index < m ; index+=col) {
+    Output.push(array[index]);
     console.log(Output);
+  ;} }
     // Output = Output.slice(0,m);
     // console.log(Output);
     // Output = Output.join();
     // console.log(Output);}
-   }
- }
 
 
  } else {
@@ -33,12 +29,13 @@ function convert () {
    col = Math.round(fake);
    console.log(row);
    console.log(col);
-   for (j=0; j <= col; j++ ) {
-   for (var i = j; i < row - 2 ; i+=col) {
-     i = i + (col*i)
-     console.log(array[i]);
-     Output.push(array[i]);
+   for (j=0; j < col; j++ ) {
+   for (var index = j; index < m; index+=col)
+    { console.log(array[index]);
+     Output.push(array[index]);
+
      console.log(Output);
+
     //  Output = Output.slice(0,m);
     //  console.log(Output);
     //  Output = Output.join();
