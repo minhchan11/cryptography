@@ -7,12 +7,12 @@ var Output = [];
 var chunk = [];
 
 function convert () {
-
-  square = Math.sqrt(Input.length);
+  
   var m = Input.length;
+  square = Math.sqrt(m);
   //for perfect square
  if ( square === parseInt(square,10) ) {
-   col = Math.sqrt(Input.length)
+   col = square;
    for (j=0; j < col ; j++ ) {
    for (var index = j; index < m ; index+=col) {
     Output.push(array[index]);
