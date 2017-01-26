@@ -3,11 +3,13 @@ var row = 0;
 var col = 0;
 var square = 0;
 var array = [];
+var Output = [];
+var chunk = [];
 
 
 function convert () {
-  var Output = [];
-  var chunk = [];
+  Output = [];
+  chunk = [];
   var m = Input.length;
   square = Math.sqrt(m);
   //for perfect square
